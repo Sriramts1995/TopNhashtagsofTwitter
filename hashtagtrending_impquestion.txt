@@ -1,0 +1,34 @@
+'''
+# Sample code to perform I/O:
+
+name = input()                  # Reading input from STDIN
+print('Hi, %s.' % name)         # Writing output to STDOUT
+
+# Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+'''
+# Write your code here
+from collections import Counter
+n=int(input())
+res=" "
+r=[]
+r1=[]
+d={}
+for i in range(n):
+    val=input().split()
+    for j in val:
+        if "#" in j:
+            r.append(j)
+r=sorted(r)
+#print(r)
+for i in r:
+    d[i]=r.count(i)
+def reverse_dict(d,reverse):
+    return dict(sorted(d.items(),key = lambda x:x[1],reverse=reverse))
+man=reverse_dict(d,True)
+#print(man)
+count=0
+for i in man:
+    if count<5:
+        print(i)
+        count=count+1
+https://stackoverflow.com/questions/493046/i-dont-understand-slicing-with-negative-bounds-in-python-how-is-this-supposed
